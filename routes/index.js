@@ -9,6 +9,9 @@ const gateway = new braintree.BraintreeGateway({
 });
 
 module.exports = function (app) {
+  app.get("/", function (req, res) {
+    res.send("Welcome to Stacia Backend");
+  });
   app.get("/braintree", function (req, res) {
     res.send("Braintree route is healthy");
   });
