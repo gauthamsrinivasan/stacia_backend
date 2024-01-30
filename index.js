@@ -23,7 +23,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 routes(app);
 
 // Server Setup
-const port = process.env.NODE_ENV == "production" ? 80 : 5000;
-const server = http.createServer(app);
-server.listen(port);
-console.log("Server listening on:", port);
+const port = process.env.PORT || 9001;
+app.listen(port, () => console.log(`Listening to port ${port}`));
